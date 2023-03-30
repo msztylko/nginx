@@ -25,3 +25,14 @@ root               101   0.0  0.0 408660704     16   ??  Ss   27Feb23   0:00.02 
 ```bash
 kill -HUP <nginx.pid>
 ```
+
+### No port redirection
+
+It is useful to add this option, so that redirects don't include port number in the URL.
+
+```nginx
+server {
+    listen              8000;
+    port_in_redirect    off;
+    server_name         localhost;
+```
