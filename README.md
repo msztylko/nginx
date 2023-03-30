@@ -36,3 +36,13 @@ server {
     port_in_redirect    off;
     server_name         localhost;
 ```
+
+### How to redirect to application running locally
+
+Assuming your application runs on port 5000, like Flask applications usually tend to do.
+
+```nginx
+location /app {
+    proxy_pass http://localhost:5000/;
+}
+```
